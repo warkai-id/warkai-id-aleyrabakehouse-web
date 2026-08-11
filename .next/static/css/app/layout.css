@@ -1038,9 +1038,6 @@
   .max-w-\[320px\] {
     max-width: 320px;
   }
-  .max-w-\[900px\] {
-    max-width: 900px;
-  }
   .max-w-\[1100px\] {
     max-width: 1100px;
   }
@@ -1470,18 +1467,11 @@
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
   }
-  .text-\[2\.35rem\] {
-    font-size: 2.35rem;
-  }
   .text-\[3\.05rem\] {
     font-size: 3.05rem;
   }
   .text-\[10px\] {
     font-size: 10px;
-  }
-  .leading-\[1\.04\] {
-    --tw-leading: 1.04;
-    line-height: 1.04;
   }
   .leading-\[1\.06\] {
     --tw-leading: 1.06;
@@ -1510,10 +1500,6 @@
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
-  }
-  .tracking-\[-0\.025em\] {
-    --tw-tracking: -0.025em;
-    letter-spacing: -0.025em;
   }
   .tracking-\[0\.01em\] {
     --tw-tracking: 0.01em;
@@ -1835,9 +1821,6 @@
     .sm\:flex-row {
       flex-direction: row;
     }
-    .sm\:text-\[2\.75rem\] {
-      font-size: 2.75rem;
-    }
     .sm\:text-\[3\.6rem\] {
       font-size: 3.6rem;
     }
@@ -1981,10 +1964,6 @@
     }
     .md\:text-\[4\.875rem\] {
       font-size: 4.875rem;
-    }
-    .md\:leading-\[1\.02\] {
-      --tw-leading: 1.02;
-      line-height: 1.02;
     }
     .md\:leading-\[1\.04\] {
       --tw-leading: 1.04;
