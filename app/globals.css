@@ -142,6 +142,13 @@ body {
   overflow-x: hidden;
 }
 
+/* Prevent content from hiding behind the fixed mobile bottom nav */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 /* ============================================
    TYPOGRAPHY
    Restrained scale per V3 reference.
@@ -694,6 +701,14 @@ h4 {
   animation: audio-slide-in 250ms ease both;
 }
 
+/* On mobile, float audio controls above the fixed bottom nav */
+@media (max-width: 767px) {
+  .audio-controls-bar {
+    bottom: calc(60px + env(safe-area-inset-bottom, 0px) + 0.5rem);
+    padding-bottom: 0.25rem;
+  }
+}
+
 .audio-btn {
   display: flex;
   align-items: center;
@@ -744,4 +759,12 @@ h4 {
   0 1px 0 rgba(255, 246, 224, 0.65),
   0 0 5px rgba(255, 239, 210, 0.38),
   0 3px 10px rgba(61, 36, 24, 0.42);
+}
+
+/* ============================================
+   MOBILE BOTTOM NAVIGATION
+   iOS safe-area padding for notched devices.
+   ============================================ */
+.mobile-bottom-nav {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }

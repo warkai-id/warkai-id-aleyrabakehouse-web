@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { mainNavigation } from "@/content/navigation";
-import { MobileNavigation } from "./mobile-navigation";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,7 +28,8 @@ export function Header() {
         : "bg-transparent border-transparent"
         }`}
     >
-      <div className="section-container flex h-[88px] items-center justify-between">
+      {/* Mobile: centered, compact | Desktop: original justify-between layout */}
+      <div className="section-container flex h-[64px] md:h-[88px] items-center justify-center md:justify-between">
 
         {/* Logo — fades in and becomes interactive only when scrolled */}
         <div
@@ -54,7 +54,7 @@ export function Header() {
                 draggable={false}
               />
             </div>
-            {/* Mobile Logo */}
+            {/* Mobile Logo — centered via parent justify-center */}
             <Image
               src="/images/brand/logo-transparent.webp"
               alt="Aleyra Bakehouse"
@@ -67,7 +67,7 @@ export function Header() {
           </Link>
         </div>
 
-        {/* Desktop navigation */}
+        {/* Desktop navigation — unchanged */}
         <nav
           className="hidden md:flex items-center gap-6"
           aria-label="Main navigation"
@@ -101,10 +101,8 @@ export function Header() {
             </a>
           </div>
         </nav>
-
-        {/* Mobile hamburger */}
-        <MobileNavigation isScrolled={isScrolled} />
       </div>
     </header>
   );
 }
+
