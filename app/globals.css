@@ -100,6 +100,8 @@
   --font-heading: var(--font-playfair), "Playfair Display", Georgia, serif;
   --font-body: var(--font-manrope), "Manrope", system-ui, sans-serif;
   --font-accent: var(--font-dancing), "Dancing Script", cursive;
+  --font-diantha: var(--font-diantha), "Diantha", cursive;
+  --font-hopes: var(--font-hopes), "Hopes And Dream", cursive;
 }
 
 /* ============================================
@@ -750,15 +752,46 @@ h4 {
 }
 
 /* ============================================
-   HERO TITLE STYLES
+   HERO TYPOGRAPHY & VARIANTS
+   Variant A: Champagne Luxury (#F5D7A3)
+   Variant B: Deep Cocoa Boutique (#7A4028)
    ============================================ */
+:root {
+  --hero-title-variant-a: #F5D7A3;
+  --hero-title-variant-b: #7A4028;
+  --hero-title-color: var(--hero-title-variant-a);
+}
+
 .hero-title {
-  font-family: var(--font-hero-display), serif;
-  color: #8f171b;
+  font-family: var(--font-diantha), cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--hero-title-color);
+}
+
+/* Variant A — Champagne luxury */
+.hero-title-variant-a {
+  --hero-title-color: var(--hero-title-variant-a);
+  text-shadow: 0 4px 25px rgba(80, 45, 25, 0.35);
+}
+
+/* Variant B — Deep cocoa boutique */
+.hero-title-variant-b {
+  --hero-title-color: var(--hero-title-variant-b);
   text-shadow:
-  0 1px 0 rgba(255, 246, 224, 0.65),
-  0 0 5px rgba(255, 239, 210, 0.38),
-  0 3px 10px rgba(61, 36, 24, 0.42);
+    0 2px 16px rgba(255, 243, 214, 0.35),
+    0 4px 30px rgba(61, 36, 24, 0.25);
+}
+
+/* Subtagline — Cormorant Garamond Italic, Warm Ivory @ 85% opacity */
+.hero-description {
+  font-family: var(--font-hero-display), "Cormorant Garamond", Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255, 251, 245, 0.85);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 8px rgba(61, 36, 24, 0.45);
 }
 
 /* ============================================
@@ -767,4 +800,4 @@ h4 {
    ============================================ */
 .mobile-bottom-nav {
   padding-bottom: env(safe-area-inset-bottom, 0px);
-}
+}

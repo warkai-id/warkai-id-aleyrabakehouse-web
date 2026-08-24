@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Manrope, Dancing_Script, Cormorant_Garamond } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -31,6 +32,29 @@ const heroDisplay = Cormorant_Garamond({
   display: "swap",
 });
 
+const diantha = localFont({
+  src: "../public/fonts/Diantha.ttf",
+  variable: "--font-diantha",
+  display: "swap",
+});
+
+const hopesAndDream = localFont({
+  src: [
+    {
+      path: "../public/fonts/hopesanddream-regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/hopesanddream-italic.otf",
+      weight: "400",
+      style: "italic",
+    },
+  ],
+  variable: "--font-hopes",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Aleyra Bakehouse | Soft inside. Burnt just right.",
   description: "Aleyra Bakehouse — Soft burnt cheesecake yang dibuat fresh dengan cinta untuk momen kecil yang layak dirayakan.",
@@ -42,7 +66,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${playfair.variable} ${manrope.variable} ${dancing.variable} ${heroDisplay.variable} scroll-smooth`}>
+    <html lang="id" className={`${playfair.variable} ${manrope.variable} ${dancing.variable} ${heroDisplay.variable} ${diantha.variable} ${hopesAndDream.variable} scroll-smooth`}>
       <body className="antialiased min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow flex flex-col">

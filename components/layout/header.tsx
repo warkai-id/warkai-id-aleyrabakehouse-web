@@ -10,7 +10,7 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Trigger scroll state after scrolling down a bit (e.g., 50px)
+      // Trigger scroll state after scrolling down past top (50px)
       setIsScrolled(window.scrollY > 50);
     };
 
@@ -24,16 +24,16 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 z-40 w-full transition-all duration-300 ease-in-out ${isScrolled
-        ? "bg-butter-cream border-b border-light-taupe shadow-none"
-        : "bg-transparent border-transparent"
+          ? "bg-butter-cream border-b border-light-taupe shadow-none"
+          : "bg-transparent border-transparent"
         }`}
     >
       {/* Mobile: centered, compact | Desktop: original justify-between layout */}
-      <div className="section-container flex h-[64px] md:h-[88px] items-center justify-center md:justify-between">
+      <div className="section-container flex h-[56px] md:h-[88px] items-center justify-between md:justify-between">
 
-        {/* Logo — fades in and becomes interactive only when scrolled */}
+        {/* DESKTOP LOGO — fades in and becomes interactive only when scrolled (unchanged) */}
         <div
-          className={`transition-opacity duration-300 ${isScrolled ? "opacity-100" : "opacity-0 pointer-events-none"
+          className={`hidden md:block transition-opacity duration-300 ${isScrolled ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
         >
           <Link
@@ -42,8 +42,7 @@ export function Header() {
             aria-label="Aleyra Bakehouse — Home"
             tabIndex={isScrolled ? 0 : -1}
           >
-            {/* Desktop Logo */}
-            <div className="relative hidden md:block h-[72px] lg:h-[76px] w-[220px] lg:w-[235px]">
+            <div className="relative h-[72px] lg:h-[76px] w-[220px] lg:w-[235px]">
               <Image
                 src="/images/brand/logo-header-desktop.webp"
                 alt="Aleyra Bakehouse"
@@ -54,13 +53,26 @@ export function Header() {
                 draggable={false}
               />
             </div>
-            {/* Mobile Logo — centered via parent justify-center */}
+          </Link>
+        </div>
+
+        {/* MOBILE LOGO — Sticky header logo for mobile. Hidden at top of page so Hero logo shows, fades in at compact 75px size when scrolled */}
+        <div
+          className={`md:hidden flex items-center justify-center w-full transition-opacity duration-300 ${isScrolled ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
+        >
+          <Link
+            href="/"
+            className="relative shrink-0 flex items-center justify-center"
+            aria-label="Aleyra Bakehouse — Home"
+            tabIndex={isScrolled ? 0 : -1}
+          >
             <Image
               src="/images/brand/logo-transparent.webp"
               alt="Aleyra Bakehouse"
               width={160}
               height={59}
-              className="md:hidden w-[110px] h-auto object-contain select-none"
+              className="w-[75px] h-auto object-contain select-none transition-all duration-300 ease-out"
               priority
               draggable={false}
             />
