@@ -561,195 +561,6 @@ h4 {
   display: none;
 }
 
-/* ============================================
-   WELCOME POPUP
-   First-view modal with brand illustration.
-   Accessible, mobile-first, reduced-motion aware.
-   ============================================ */
-
-.welcome-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(61, 36, 24, 0.6);
-  padding: 1rem;
-  padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
-  animation: welcome-fade-in 300ms ease both;
-}
-
-.welcome-dialog {
-  position: relative;
-  width: 100%;
-  max-width: 520px;
-  max-height: calc(100dvh - 2rem);
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  background-color: var(--color-warm-white);
-  border-radius: var(--radius-xl);
-  box-shadow: 0 8px 40px rgba(61, 36, 24, 0.25);
-  outline: none;
-  animation: welcome-scale-in 300ms ease both;
-}
-
-.welcome-close-btn {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border: none;
-  border-radius: var(--radius-full);
-  background-color: rgba(255, 251, 245, 0.85);
-  color: var(--color-deep-cocoa);
-  cursor: pointer;
-  transition: background-color var(--transition-fast);
-}
-
-.welcome-close-btn:hover {
-  background-color: var(--color-warm-beige);
-}
-
-.welcome-image-wrapper {
-  width: 100%;
-  line-height: 0;
-}
-
-.welcome-image {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-  object-fit: cover;
-}
-
-.welcome-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding: 1.25rem 1.25rem 1.5rem;
-}
-
-.welcome-btn-primary,
-.welcome-btn-secondary {
-  width: 100%;
-  justify-content: center;
-  font-size: var(--font-size-sm);
-}
-
-@keyframes welcome-fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes welcome-scale-in {
-  from {
-    opacity: 0;
-    transform: scale(0.96);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-  .welcome-overlay,
-  .welcome-dialog {
-    animation: none;
-  }
-}
-
-/* On wider screens, buttons can sit side-by-side */
-@media (min-width: 480px) {
-  .welcome-actions {
-    flex-direction: row;
-    padding: 1.5rem;
-  }
-}
-
-/* ============================================
-   FLOATING AUDIO CONTROLS
-   Small bar, bottom-right, above safe area.
-   Visible only when music has been enabled.
-   ============================================ */
-
-.audio-controls-bar {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.25rem;
-  background-color: rgba(255, 251, 245, 0.92);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
-  box-shadow: var(--shadow-card);
-  padding-bottom: calc(0.25rem + env(safe-area-inset-bottom, 0px));
-  animation: audio-slide-in 250ms ease both;
-}
-
-/* On mobile, float audio controls above the fixed bottom nav */
-@media (max-width: 767px) {
-  .audio-controls-bar {
-    bottom: calc(60px + env(safe-area-inset-bottom, 0px) + 0.5rem);
-    padding-bottom: 0.25rem;
-  }
-}
-
-.audio-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border: none;
-  border-radius: var(--radius-full);
-  background-color: transparent;
-  color: var(--color-cocoa-brown);
-  cursor: pointer;
-  transition: background-color var(--transition-fast), color var(--transition-fast);
-}
-
-.audio-btn:hover {
-  background-color: var(--color-warm-beige);
-}
-
-.audio-btn:active {
-  background-color: var(--color-light-taupe);
-}
-
-@keyframes audio-slide-in {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .audio-controls-bar {
-    animation: none;
-  }
-}
 
 /* ============================================
    HERO TYPOGRAPHY & VARIANTS
@@ -800,4 +611,26 @@ h4 {
    ============================================ */
 .mobile-bottom-nav {
   padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* ============================================
+   VIDEO POPUP ANIMATIONS
+   Used by the "Meet Aleyra With Chezer" popup.
+   ============================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-\[fadeIn_200ms_ease_both\],
+  .animate-\[scaleIn_200ms_ease_both\] {
+    animation: none !important;
+  }
 }

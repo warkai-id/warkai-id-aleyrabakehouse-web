@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Reveal } from "@/components/features/motion/reveal";
+import { MeetAleyraButton } from "@/components/features/meet-aleyra-button";
 
 export function BrandStorySection() {
   return (
@@ -31,12 +31,7 @@ export function BrandStorySection() {
             <p className="accent-script text-2xl text-cherry-red mb-8">
               Your little happy ritual ♡
             </p>
-            <Link 
-              href="/about" 
-              className="btn-link text-cocoa-brown border-b border-cocoa-brown pb-1 hover:text-cherry-red hover:border-cherry-red transition-colors inline-block"
-            >
-              Meet Aleyra
-            </Link>
+            <MeetAleyraButton />
           </Reveal>
         </div>
       </div>
