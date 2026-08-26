@@ -88,6 +88,8 @@ export function VideoPopup({ isOpen, onClose }: VideoPopupProps) {
       const firstEl = focusableEls[0];
       const lastEl = focusableEls[focusableEls.length - 1];
 
+      if (!firstEl || !lastEl) return;
+
       if (e.shiftKey) {
         if (document.activeElement === firstEl) {
           e.preventDefault();

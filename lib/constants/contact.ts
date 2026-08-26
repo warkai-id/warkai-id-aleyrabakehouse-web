@@ -1,14 +1,17 @@
-// TODO: replace with official Aleyra WhatsApp number before production.
-export const WHATSAPP_NUMBER = "6280000000000";
+export const WHATSAPP_NUMBER_API = "6281388180203";
+export const WHATSAPP_NUMBER_DISPLAY = "+62 813 8818 0203";
+export const OFFICIAL_EMAIL = "hello@aleyrabake.my.id";
+export const OFFICIAL_DOMAIN = "aleyrabake.my.id";
 
 export const CONTACT = {
-  whatsapp: WHATSAPP_NUMBER,
+  whatsapp: WHATSAPP_NUMBER_API,
+  whatsappDisplay: WHATSAPP_NUMBER_DISPLAY,
   instagram: "@aleyra.bakehouse",
   instagramUrl: "https://instagram.com/aleyra.bakehouse",
-  email: "aleyrabakehouse@gmail.com",
+  email: OFFICIAL_EMAIL,
   area: "Jatibening — Kota Bekasi",
   operatingHours: "09.00–20.00",
-  domain: "aleyrabake.my.id",
+  domain: OFFICIAL_DOMAIN,
 } as const;
 
 export const SITE_CONFIG = {

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { HeroCarousel } from "../features/hero/hero-carousel";
 import { HeroContentMotion } from "../features/hero/hero-content-motion";
+import { generateInquiryUrl } from "@/lib/whatsapp/generate-url";
 
 export function HeroSection() {
   return (
@@ -54,7 +55,7 @@ export function HeroSection() {
         <HeroContentMotion delay={0.4}>
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-5 md:mb-8 w-full sm:w-auto max-w-md mx-auto sm:max-w-none pointer-events-auto">
             <a
-              href="https://wa.me/6280000000000"
+              href={generateInquiryUrl()}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary bg-cocoa-brown text-warm-white hover:bg-deep-cocoa shadow-md shadow-cocoa-brown/20"

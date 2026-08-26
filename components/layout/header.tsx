@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { mainNavigation } from "@/content/navigation";
+import { generateInquiryUrl } from "@/lib/whatsapp/generate-url";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -103,7 +104,7 @@ export function Header() {
               }`}
           >
             <a
-              href="https://wa.me/6280000000000"
+              href={generateInquiryUrl()}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-accent btn-sm"

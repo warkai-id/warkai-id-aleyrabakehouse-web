@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Instagram, Mail, MapPin, Clock } from "lucide-react";
+import { CONTACT } from "@/lib/constants/contact";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -33,22 +34,22 @@ export function Footer() {
             <ul className="space-y-3 font-body text-sm text-[#DCC8B0]">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="shrink-0 mt-0.5 text-[#F3E6CF]" />
-                <span>Jatibening — Kota Bekasi</span>
+                <span>{CONTACT.area}</span>
               </li>
               <li className="flex items-start gap-3">
                 <Clock size={18} className="shrink-0 mt-0.5 text-[#F3E6CF]" />
-                <span>09.00–20.00</span>
+                <span>{CONTACT.operatingHours}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="shrink-0 text-[#F3E6CF]" />
-                <a href="mailto:aleyrabakehouse@gmail.com" className="text-[#DCC8B0] hover:text-[#FFF3D6] transition-colors">
-                  aleyrabakehouse@gmail.com
+                <a href={`mailto:${CONTACT.email}`} className="text-[#DCC8B0] hover:text-[#FFF3D6] transition-colors">
+                  {CONTACT.email}
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Instagram size={18} className="shrink-0 text-[#F3E6CF]" />
-                <a href="https://instagram.com/aleyra.bakehouse" target="_blank" rel="noopener noreferrer" className="text-[#DCC8B0] hover:text-[#FFF3D6] transition-colors">
-                  @aleyra.bakehouse
+                <a href={CONTACT.instagramUrl} target="_blank" rel="noopener noreferrer" className="text-[#DCC8B0] hover:text-[#FFF3D6] transition-colors">
+                  {CONTACT.instagram}
                 </a>
               </li>
             </ul>
@@ -95,7 +96,7 @@ export function Footer() {
           <div className="flex items-center gap-1">
             <span>Made with love in Bekasi</span>
             <span className="mx-2">•</span>
-            <span>aleyrabake.my.id</span>
+            <span>{CONTACT.domain}</span>
           </div>
         </div>
       </div>

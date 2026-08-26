@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { Home, UtensilsCrossed, BookHeart, ShoppingBag } from "lucide-react";
 import type { ReactNode } from "react";
+import { generateInquiryUrl } from "@/lib/whatsapp/generate-url";
 
 /** Section IDs that map to bottom nav items for active-state detection */
 const SECTION_IDS = ["menu", "our-story"] as const;
@@ -34,7 +35,7 @@ const NAV_ITEMS: BottomNavItem[] = [
   },
   {
     label: "Order",
-    href: "https://wa.me/6280000000000",
+    href: generateInquiryUrl(),
     icon: <ShoppingBag size={20} strokeWidth={1.6} />,
     isExternal: true,
     isAccent: true,
