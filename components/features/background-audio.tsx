@@ -55,7 +55,7 @@ export function BackgroundAudio() {
       try {
         await audio.play();
         setIsPlaying(true);
-      } catch (err) {
+      } catch {
         // Autoplay blocked by browser. Wait for interaction.
         const onInteract = async () => {
           try {

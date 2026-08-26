@@ -29,7 +29,7 @@ Terima kasih.`;
               Rayakan Momen Kecilmu dengan Aleyra
             </h2>
             <p className="font-body text-cocoa-brown/80 mb-10 leading-relaxed max-w-md">
-              Nikmati burnt cheesecake yang dipanggang fresh from the oven, dikemas dengan penuh cinta & cheesecakery vibes, dibuat untuk momen yang layak dikenang. Tell us what you need, and we'll help you prepare it.
+              Nikmati burnt cheesecake yang dipanggang fresh from the oven, dikemas dengan penuh cinta & cheesecakery vibes, dibuat untuk momen yang layak dikenang. Tell us what you need, and we&apos;ll help you prepare it.
             </p>
 
             <a
