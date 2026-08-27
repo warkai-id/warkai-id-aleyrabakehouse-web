@@ -7,9 +7,9 @@ import { motion, useReducedMotion } from "framer-motion";
 /* ------------------------------------------------
    Data
    ------------------------------------------------ */
-const TESTIMONIALS = Array.from({ length: 14 }, (_, i) => ({
-  src: `/images/testimonials/testimonial-${i + 1}.webp`,
-  alt: `Testimoni pelanggan Aleyra Bakehouse ${i + 1}`,
+const TESTIMONIALS = Array.from({ length: 19 }, (_, i) => ({
+  src: `/images/testimonials/TESTIMONI (${i + 1}).webp`,
+  alt: `Customer testimonial for Aleyra Bakehouse ${i + 1}`,
 }));
 
 const TOTAL = TESTIMONIALS.length;
@@ -248,24 +248,24 @@ export function TestimonialCarouselSection() {
                       }}
                     />
 
-                    {/* Image container — fixed height, object-contain, above glass */}
+                    {/* Image container — fixed height, object-cover, above glass */}
                     <div
-                      className="relative flex items-center justify-center p-2"
+                      className="relative p-2"
                       style={{
                         height: isMobile ? "400px" : "500px",
                         zIndex: 1,
                       }}
                     >
-                      <Image
-                        src={testimonial.src}
-                        alt={testimonial.alt}
-                        width={280}
-                        height={480}
-                        className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg"
-                        style={{ opacity: 1, filter: "none" }}
-                        sizes={isMobile ? "260px" : "300px"}
-                        priority={index <= 2}
-                      />
+                      <div className="relative w-full h-full rounded-lg overflow-hidden">
+                        <Image
+                          src={testimonial.src}
+                          alt={testimonial.alt}
+                          fill
+                          className="object-cover"
+                          sizes={isMobile ? "260px" : "300px"}
+                          priority={index <= 2}
+                        />
+                      </div>
                     </div>
                   </div>
                 </motion.div>
