@@ -2,7 +2,7 @@ import Image from "next/image";
 import { MapPin, Clock, Calendar } from "lucide-react";
 import { Reveal } from "@/components/features/motion/reveal";
 import { notifyPreOrder, notifyEvent } from "@/content/notify-with-aleyra";
-import { generateWhatsAppUrl } from "@/lib/whatsapp/generate-url";
+import { CONTACT } from "@/lib/constants/contact";
 
 export function NotifyWithAleyraSection() {
   return (
@@ -51,7 +51,7 @@ export function NotifyWithAleyraSection() {
                 </p>
                 
                 <a
-                  href={generateWhatsAppUrl({ message: notifyPreOrder.ctaMessage })}
+                  href={CONTACT.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-accent text-center w-full sm:w-auto mt-auto md:mt-0"
@@ -104,8 +104,8 @@ export function NotifyWithAleyraSection() {
                   </div>
                 </div>
                 
-                <a 
-                  href={generateWhatsAppUrl({ message: notifyEvent.ctaMessage })}
+                <a
+                  href={CONTACT.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary w-full sm:w-auto text-center border-light-taupe text-cocoa-brown hover:bg-light-taupe/10 mt-auto md:mt-0"
