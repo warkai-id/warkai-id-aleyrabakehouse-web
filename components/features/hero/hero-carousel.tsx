@@ -28,7 +28,7 @@ const slides = [
     id: 3,
     src: "/images/hero/hero-slide-03.webp",
     alt: "Aleyra Bakehouse burnt cheesecake slice",
-    imageClassName: "object-cover object-[center_70%] md:object-[center_65%]",
+    imageClassName: "object-cover object-[center_70%] md:object-[center_55%]",
   },
 ] as const satisfies readonly [
   HeroSlide,
