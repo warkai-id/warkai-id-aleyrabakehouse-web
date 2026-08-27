@@ -7,10 +7,27 @@ import { motion, useReducedMotion } from "framer-motion";
 /* ------------------------------------------------
    Data
    ------------------------------------------------ */
-const TESTIMONIALS = Array.from({ length: 19 }, (_, i) => ({
-  src: `/images/testimonials/TESTIMONI (${i + 1}).webp`,
-  alt: `Customer testimonial for Aleyra Bakehouse ${i + 1}`,
-}));
+const TESTIMONIALS = [
+  { src: `/images/testimonials/TESTIMONI (1).webp`, alt: `Customer testimonial for Aleyra Bakehouse 1`, width: 1080, height: 620 },
+  { src: `/images/testimonials/TESTIMONI (2).webp`, alt: `Customer testimonial for Aleyra Bakehouse 2`, width: 1080, height: 273 },
+  { src: `/images/testimonials/TESTIMONI (3).webp`, alt: `Customer testimonial for Aleyra Bakehouse 3`, width: 1080, height: 265 },
+  { src: `/images/testimonials/TESTIMONI (4).webp`, alt: `Customer testimonial for Aleyra Bakehouse 4`, width: 1080, height: 158 },
+  { src: `/images/testimonials/TESTIMONI (5).webp`, alt: `Customer testimonial for Aleyra Bakehouse 5`, width: 1080, height: 624 },
+  { src: `/images/testimonials/TESTIMONI (6).webp`, alt: `Customer testimonial for Aleyra Bakehouse 6`, width: 1080, height: 308 },
+  { src: `/images/testimonials/TESTIMONI (7).webp`, alt: `Customer testimonial for Aleyra Bakehouse 7`, width: 1080, height: 258 },
+  { src: `/images/testimonials/TESTIMONI (8).webp`, alt: `Customer testimonial for Aleyra Bakehouse 8`, width: 1080, height: 292 },
+  { src: `/images/testimonials/TESTIMONI (9).webp`, alt: `Customer testimonial for Aleyra Bakehouse 9`, width: 1080, height: 2340 },
+  { src: `/images/testimonials/TESTIMONI (10).webp`, alt: `Customer testimonial for Aleyra Bakehouse 10`, width: 1080, height: 2340 },
+  { src: `/images/testimonials/TESTIMONI (11).webp`, alt: `Customer testimonial for Aleyra Bakehouse 11`, width: 1080, height: 2340 },
+  { src: `/images/testimonials/TESTIMONI (12).webp`, alt: `Customer testimonial for Aleyra Bakehouse 12`, width: 1080, height: 2115 },
+  { src: `/images/testimonials/TESTIMONI (13).webp`, alt: `Customer testimonial for Aleyra Bakehouse 13`, width: 1080, height: 2129 },
+  { src: `/images/testimonials/TESTIMONI (14).webp`, alt: `Customer testimonial for Aleyra Bakehouse 14`, width: 1080, height: 2130 },
+  { src: `/images/testimonials/TESTIMONI (15).webp`, alt: `Customer testimonial for Aleyra Bakehouse 15`, width: 1080, height: 2130 },
+  { src: `/images/testimonials/TESTIMONI (16).webp`, alt: `Customer testimonial for Aleyra Bakehouse 16`, width: 1080, height: 1709 },
+  { src: `/images/testimonials/TESTIMONI (17).webp`, alt: `Customer testimonial for Aleyra Bakehouse 17`, width: 1080, height: 1749 },
+  { src: `/images/testimonials/TESTIMONI (18).webp`, alt: `Customer testimonial for Aleyra Bakehouse 18`, width: 1080, height: 251 },
+  { src: `/images/testimonials/TESTIMONI (19).webp`, alt: `Customer testimonial for Aleyra Bakehouse 19`, width: 1080, height: 404 },
+];
 
 const TOTAL = TESTIMONIALS.length;
 const AUTOPLAY_INTERVAL = 4000;
@@ -248,24 +265,24 @@ export function TestimonialCarouselSection() {
                       }}
                     />
 
-                    {/* Image container — fixed height, object-cover, above glass */}
+                    {/* Image container — fixed height, object-contain, above glass */}
                     <div
-                      className="relative p-2"
+                      className="relative flex items-center justify-center p-2"
                       style={{
                         height: isMobile ? "400px" : "500px",
                         zIndex: 1,
                       }}
                     >
-                      <div className="relative w-full h-full rounded-lg overflow-hidden">
-                        <Image
-                          src={testimonial.src}
-                          alt={testimonial.alt}
-                          fill
-                          className="object-cover"
-                          sizes={isMobile ? "260px" : "300px"}
-                          priority={index <= 2}
-                        />
-                      </div>
+                      <Image
+                        src={testimonial.src}
+                        alt={testimonial.alt}
+                        width={testimonial.width}
+                        height={testimonial.height}
+                        className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg"
+                        style={{ opacity: 1, filter: "none" }}
+                        sizes={isMobile ? "260px" : "300px"}
+                        priority={index <= 2}
+                      />
                     </div>
                   </div>
                 </motion.div>
