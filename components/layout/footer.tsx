@@ -78,7 +78,7 @@ export function Footer() {
               alt="Aleyra Bakehouse"
               width={160}
               height={160}
-              className="w-12 md:w-[160px] h-auto object-contain select-none"
+              className="w-[58px] md:w-[160px] h-auto object-contain select-none"
             />
             <p>&copy; {currentYear} Aleyra Bakehouse. All rights reserved.</p>
           </div>
